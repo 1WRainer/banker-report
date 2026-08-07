@@ -2,9 +2,13 @@ name: Daily BankerReport Fetcher
 
 on:
   schedule:
-    # 12:00 UTC corresponds to 7:00 AM CST
     - cron: '0 12 * * *'
-  workflow_dispatch: # Allows triggering the script manually for testing
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
